@@ -1,0 +1,8 @@
+{
+  "short_name": "Jonathan Ohlsson",
+  "name": "ionTea",
+  "start_url": "/index.html",
+  "background_color": "#fff",
+  "display": "standalone",
+  "orientation": "portrait"
+}
