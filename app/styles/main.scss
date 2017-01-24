@@ -25,6 +25,31 @@ h6 {
 	text-rendering: optimizelegibility;
 }
 
+.button {
+    background-color: transparent;
+    color: $accent_purple;
+    border: 0.1rem solid $accent_purple;
+    border-radius: .4rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    height: 3.8rem;
+    letter-spacing: .1rem;
+    line-height: 3.8rem;
+    padding: 0 3.0rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $accent_purple_lighter;
+      color: $accent_purple_lighter;
+    }
+}
+
 .hero-unit {
   text-align: center;
   h1 {
@@ -49,7 +74,11 @@ h6 {
       transition: all 0.3s ease 0s;
     }
   }
+}
 
+.resume {
+  margin-top: 30px;
+  text-align: center;
 }
 
 .browserupgrade {
