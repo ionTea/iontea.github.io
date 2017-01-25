@@ -4,5 +4,10 @@
   "start_url": "/index.html",
   "background_color": "#fff",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "icons": [{
+    "src": "images/icon3.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  }]
 }

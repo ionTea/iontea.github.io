@@ -11,6 +11,22 @@ const reload = browserSync.reload;
 
 var dev = true;
 
+gulp.task('generate-service-worker', function(callback) {
+  var path = require('path');
+  var swPrecache = require('sw-precache');
+  var rootDir = 'dist';
+
+  swPrecache.write(`${rootDir}/service-worker.js`, {
+    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
+    stripPrefix: rootDir,
+    handler: "fastest",
+    runtimeCaching: [{
+        urlPattern: /font-awesome.min.css$/,
+        handler: 'fastest'
+      }]
+  }, callback);
+});
+
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
     .pipe($.plumber())
@@ -163,6 +179,6 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
-    runSequence(['clean', 'wiredep'], 'build', resolve);
+    runSequence(['clean', 'wiredep'], 'build', "generate-service-worker", resolve);
   });
 });
